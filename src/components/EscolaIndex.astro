@@ -1,0 +1,62 @@
+---
+
+---
+
+<section class="color-section full-height escola">
+  <div class="wrapper">
+    <div class="escola-image">
+      <img src="/assets/images/senyoretes.png" alt="Imatge de les Senyoretes">
+    </div>
+    <div class="escola-info">
+      <h2>L'escola</h2>
+      <p>El 1962 es crea la Fundació del Patronat de la Fundació Antònia i  Montserrat Raventós i Ventura, Escola de Puntaires de Barcelona,  integrada a l'Escola Massana</p>
+      <p>La Fundació té per objecte l’ensenyament i el foment dels treballs  artístics de randes i puntes d’agulla, a mà i amb boixets de qualsevol  estil, amb especial suport als de l’estil tradicional català.</p>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @import "../css/global";
+
+  .escola {
+    background: linear-gradient(90deg, rgba(3,61,46,1) 0%, rgba(0,104,79,1) 35%, rgba(0,155,118,1) 100%);
+    color: $fg-color-light;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 4rem;
+  }
+
+  .escola-image {
+    & img {
+      width: 350px;
+    }
+  }
+
+  .escola-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+
+    h2 {
+      text-align: center;
+      font-family: var(--font-title);
+      color: $fg-color-title;
+    }
+
+    p {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 400;
+    }
+  }
+</style>

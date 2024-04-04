@@ -1,0 +1,98 @@
+---
+const { ask } = Astro.props
+---
+
+<li>
+  <article class="accordionItem">
+    <div class="accordionTitle">
+      <h4>{ask}</h4>
+      <button>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+        </svg>
+      </button>
+    </div>
+    <div class="accordionAnswer">
+      <slot></slot>
+    </div>
+  </article>
+</li>
+
+<style lang="scss">
+  @import "../css/global";
+
+  li {
+    width: 100%;
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .accordionItem {
+    background-color: $bg-dark;
+    border-radius: $border-radius;
+    padding: 1rem;
+  }
+
+  .accordionTitle {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $fg-color-title;
+
+    svg {
+      $size: 18px;
+      width: $size;
+      height: $size;
+    }
+  }
+
+  .accordionTitle + .accordionAnswer {
+    display: none;
+  }
+
+  .accordionTitle.is-open + .accordionAnswer {
+    display: block;
+  }
+
+  .accordionTitle.is-open {
+    border-bottom: 1px solid $fg-color-title;
+    padding-bottom: .5rem;
+
+    svg {
+      rotate: 180deg;
+    }
+  }
+
+  .accordionAnswer {
+    background-color: lighten($bg-dark, 2);
+    margin-top: 1rem;
+    border-radius: 4px;
+    padding: 1rem;
+  }
+
+</style>
+
+<script>
+  const accordionTitles = document.querySelectorAll(".accordionTitle")
+
+  accordionTitles.forEach((accordionTitle) => {
+    accordionTitle.addEventListener("click", () => {
+      if (accordionTitle.classList.contains("is-open")) {
+        accordionTitle.classList.remove("is-open")
+      } else {
+
+        const accordionTitlesWithIsOpen = document.querySelectorAll(".is-open")
+
+        accordionTitlesWithIsOpen.forEach((accordionTitleWithIsOpen) => {
+          accordionTitleWithIsOpen.classList.remove("is-open")
+        })
+        accordionTitle.classList.add("is-open")
+      }
+    })
+  })
+</script>

@@ -1,0 +1,32 @@
+$font-default: "Alegreya Variable", serif;
+$bg-default: #00684F;
+$bg-light: #F9FAFB;
+$bg-dark: #033D2E;
+$bg-transparent: transparent;
+
+$fg-color-primary: #00684F;
+$fg-color-secondary: #033D2E;
+$fg-color-title: #F7D66F;
+$fg-color-light: #F0FFFF;
+$fg-color-text: #F0FFFF;
+$fg-color-text-dark: #383F46;
+
+$border-radius: 4px;
+
+:root {
+  --font-default: "Alegreya Variable", serif;
+  --font-italianno: "Italianno", cursive;
+  --font-hero-index: "Cinzel Variable", serif;
+  --font-title: "Alegreya SC", serif;
+  --font-cite: "Alegreya SC", serif;
+  --color-menu-dark: #033D2E;
+  --color-menu-light: #FFFFFF;
+  --color-border: rgb(100, 200, 100);
+  --border-card: 1px solid var(--color-border);
+  
+  --padding-section: 128px;
+  
+  --box-shadow: 0 2px 6px rgba(var(--color-border), 100%), 0 8px 24px rgba(var(--color-border), 100%), 0 16px 32px rgba(var(--color-border), 100%);
+  --box-shadow2: 0 2px 6px rgba(var(--border-card), 25%), 0 8px 24px rgba(var(--border-card), 15%), 0 16px 32px rgba(var(--border-card), 15%);
+}
+

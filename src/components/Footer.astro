@@ -1,0 +1,19 @@
+---
+import Mapa from "./Mapa.astro"
+import Legal from "./Legal.astro"
+import Credits from "./Credits.astro";
+---
+
+<footer>
+  <Mapa />
+  <Legal />
+  <Credits />
+</footer>
+
+<style lang="scss">
+  @import "../css/global";
+
+  footer {
+    background-color: $bg-dark;
+  }
+</style>

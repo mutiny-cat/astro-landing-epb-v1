@@ -1,0 +1,39 @@
+---
+
+---
+
+<section>
+  <div>
+    <a href="#" title="Crèdits">Crèdits</a>
+    <p>Escola de Puntaires de Barcelona (1962 - 2024)</p>
+  </div>
+</section>
+
+<style lang="scss">
+  @import "../css/global";
+
+  section {
+    background-color: darken($bg-dark, 5);
+  }
+
+  div {
+    margin: 0 auto;
+    max-width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    font-size: 16px;
+    font-weight: 400;
+    color: $fg-color-title;
+
+    a {
+      color: $fg-color-title;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline 1px dotted;
+      }
+    }
+  }
+</style>

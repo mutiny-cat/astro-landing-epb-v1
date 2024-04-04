@@ -1,3 +1,50 @@
 ---
+import "@fontsource-variable/alegreya"
+import "@fontsource-variable/alegreya/wght-italic.css"
+import "@fontsource/alegreya-sc"
+import "@fontsource/alegreya-sc/500-italic.css"
+import "@fontsource-variable/cinzel"
+import "@fontsource/italianno"
 
+import "../css/global.scss"
+
+import Header from "../components/Header.astro"
+import Footer from "../components/Footer.astro"
+
+const { pageTitle } = Astro.props
+const { title, description, faviconURL = "/assets/favicons/favicon-96.png", image = "/assets/images/opengraph/epb-hero.jpg" } = Astro.props
 ---
+
+<html lang="ca">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" type="image/png" href={faviconURL}>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle} | EPB</title>
+  </head>
+
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+    <div class="background"></div>
+  </body>
+</html>
+
+<style lang="scss">
+  @import "../css/global";
+
+  .background {
+    /*background: rgb(2,0,36);*/
+    /*background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(204,204,204,1) 35%, rgba(255,255,255,1) 100%);*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -3;
+    opacity: 1;
+  }
+</style>
+

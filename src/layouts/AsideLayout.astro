@@ -1,0 +1,74 @@
+---
+import "@fontsource-variable/alegreya"
+import "@fontsource-variable/alegreya/wght-italic.css"
+import "@fontsource/alegreya-sc"
+import "@fontsource-variable/cinzel"
+import "@fontsource/italianno"
+
+import "../css/global.scss"
+
+import Header from "../components/Header.astro"
+
+const { pageTitle } = Astro.props
+const { title, description, faviconURL = "/assets/favicons/favicon-96.png", image = "/assets/images/opengraph/epb-hero.jpg" } = Astro.props
+---
+
+<html lang="ca">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" type="image/png" href={faviconURL}>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle} | EPB</title>
+  </head>
+
+  <body>
+    <Header />
+    <section class="color-section hero" data-header-color="var(--color)">
+      <div class="wrapper">
+        <div class="copy">
+          <h1>Puntaires de Barcelona</h1>
+          <p>L'escola de la punta</p>
+        </div>
+        <div class="image">
+          <img src="/assets/images/puntaire.svg" alt="">
+          <h3>Trenem escola des de 1962</h3>
+        </div>
+      </div>
+      </section>
+    <main>
+      <section class="color-section light" data-header-color="red">
+        <h1>Poyas</h1>
+      </section>
+      <section class="color-section dark" data-header-color="crimson">
+        <h1>Poyas</h1>
+      </section>
+      <section class="color-section light" data-header-color="blue">
+        <h1>Poyas</h1>
+      </section>
+    </main>
+    <footer>Footer</footer>
+  </body>
+</html>
+
+<style lang="scss">
+  @import "../css/variables";
+  main {
+    min-height: 100vh;
+    margin: 0 auto;
+    max-width: 960px;
+    background: chocolate;
+  }
+
+  section {
+    min-height: 100vh;
+  }
+
+  .light {
+    background: cornsilk;
+  }
+
+  .dark {
+    background: black;
+  }
+</style>

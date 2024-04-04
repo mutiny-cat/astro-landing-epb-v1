@@ -10,6 +10,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.5.15"
+    "@fontsource-variable/alegreya": "^5.0.13",
+    "@fontsource-variable/cinzel": "^5.0.12",
+    "@fontsource/alegreya-sc": "^5.0.12",
+    "@fontsource/italianno": "^5.0.19",
+    "astro": "^4.5.15",
+    "autoprefixer": "^10.4.19",
+    "cssnano": "^6.1.2",
+    "sass": "^1.74.1"
   }
 }

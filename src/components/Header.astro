@@ -1,0 +1,146 @@
+---
+import Logo from "../components/logo.astro"
+---
+
+<header >
+  <div class="menu">
+    <a class="logo" href="#">
+      <Logo />
+    </a>
+    <nav id="header-landing">
+      <ul>
+        <li><a href="#">L'escola</a></li>
+        <li><a href="#">Formació</a></li>
+        <li><a href="#">Punta de Barcelona</a></li>
+        <li><a href="#">Ofici singular</a></li>
+        <li><a href="#">Estils i mostres</a></li>
+        <li><a href="#">Preguntes freqüents</a></li>
+        <li><a href="#">Contacta</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div id="menu-backdrop" class="menu-backdrop"></div>
+</header>
+
+<style lang="scss">
+  @import "../css/variables";
+
+  header {
+    background-color: $bg-light;
+    box-shadow: var(--box-shadow2);
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 3;
+
+    .logo {
+      width: 135px;
+    }
+
+    div {
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      padding: .5rem;
+      justify-content: space-between;
+      align-items: center;
+
+      img {
+        height: 64px;
+      }
+
+      ul {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+      }
+
+      a {
+        color: $fg-color-primary;
+        font-family: var(--font-cite);
+        font-size: 18px;
+        text-decoration: none;
+        padding: .5rem .8rem;
+
+        &:hover {
+          color: lighten($bg-default, 10);
+        }
+
+        &.logo {
+          color: $fg-color-primary;
+          transition: all .3s ease-in-out;
+
+          &:hover {
+            color: lighten($bg-default, 10);
+            transform: scale(1.1);
+            transition: all .3s ease-in-out;
+          }
+        }
+      }
+    }
+
+    .menu-backdrop {
+      position: absolute;
+      top: var(--top);
+      left: var(--left);
+      width: var(--width);
+      height: var(--height);
+      opacity: 0;
+      backdrop-filter: blur(2px);
+      background: transparent;
+      /*border-radius: $border-radius;*/
+      border-bottom: 2px solid lighten($bg-default, 10);;
+      transition: all .3s ease-in-out;
+      z-index: -3;
+    }
+  }
+</style>
+
+<script>
+    const $header = document.querySelector('#header-landing') as HTMLElement
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.9
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const { isIntersecting } = entry
+        if (isIntersecting) {
+          const color = entry.target.getAttribute('data-header-color')
+          $header.style.color = color
+        }
+      })
+    }, observerOptions)
+
+    const $sections = document.querySelectorAll('.color-section')
+    $sections.forEach((section) => observer.observe(section))
+</script>
+
+<script>
+    const listItem = document.querySelectorAll('#header-landing a')
+    const menuBackDrop = document.querySelector('#menu-backdrop') as HTMLElement
+
+    listItem.forEach((item) => {
+      item.addEventListener('mouseenter', () => {
+        const { left, top, width, height } = item.getBoundingClientRect()
+        const { clientHeight, clientWidth} = item
+
+        menuBackDrop.style.setProperty('--left', `${left}px`)
+        menuBackDrop.style.setProperty('--top', `${top}px`)
+        menuBackDrop.style.setProperty('--width', `${width}px`)
+        menuBackDrop.style.setProperty('--height', `${height}px`)
+        menuBackDrop.style.opacity = '1'
+        menuBackDrop.style.visibility = 'visible'
+      })
+
+      item.addEventListener('mouseleave', () => {
+        menuBackDrop.style.opacity = '0'
+        menuBackDrop.style.visibility = 'hidden'
+      })
+    })
+</script>

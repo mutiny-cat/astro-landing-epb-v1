@@ -1,0 +1,80 @@
+@import "variables";
+
+*, *::before, *::after { box-sizing: border-box }
+
+body {
+  font-family: var(--font-default);
+  font-weight: 400;
+  font-size: 18px;
+  margin: 0;
+  color: $fg-color-text;
+  background: linear-gradient(90deg, rgba(3,61,46,1) 0%, rgba(0,104,79,1) 35%, rgba(0,155,118,1) 100%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  color: $fg-color-title;
+}
+
+h2 {
+  font-size: 32px;
+  width: 100%;
+}
+
+h3 {
+  font-size: 20px;
+  width: 100%;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+img {
+  display: block;
+}
+
+em {
+  font-style: normal;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+  color: currentColor;
+  cursor: pointer;
+}
+
+.full-height {
+  min-height: 100vh;
+}
+
+.wrapper-index-section {
+  max-width: 960px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--padding-section) 0;
+  gap: 4rem;
+}
+
+.wrapper-section {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--padding-section) 0;
+  gap: 4rem;
+}

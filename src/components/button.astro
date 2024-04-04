@@ -1,0 +1,38 @@
+---
+const { type, url, title} = Astro.props
+---
+
+<a class={type} href={url} title={title}>{title}</a>
+
+<style lang="scss">
+  @import "../css/variables";
+
+  a {
+    border-radius: $border-radius;
+    padding: .5rem 1.5rem;
+    font-family: var(--font-default);
+    font-style: italic;
+    text-decoration: none;
+    transition: background-color .3s ease-in-out, color .3s ease-in-out;
+  }
+
+  .dark {
+    background-color: $bg-dark;
+    color: $fg-color-light;
+
+    &:hover {
+      background-color: lighten($bg-default, 10);
+      color: $fg-color-light;
+    }
+  }
+
+  .light {
+    background-color: $bg-light;
+    color: $fg-color-primary;
+
+    &:hover {
+      background-color: lighten($bg-default, 5);
+      color: $fg-color-light;
+    }
+  }
+</style>

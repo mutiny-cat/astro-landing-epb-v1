@@ -1,0 +1,84 @@
+---
+import Button from "../components/button.astro"
+---
+
+<section class="color-section">
+  <div class="wrapper-section">
+    <h2>Estils i mostres</h2>
+    <p>L’origen de la punta és incert, però sí que sabem que el <em>punt a l’agulla</em> deriva del brodat i la <em>punta al coixí</em>, del teixit.</p>
+    <p>Possiblement tot comenci amb l'antic art del <em>macramé</em>, paraula d'origen àrab que significa <em>nus</em>.</p>
+    <div class="images">
+      <img src="/assets/images/ccam-alt-pirineu-i-aran.jpg" alt="">
+    </div>
+    <p>A partir d'aquí podem trobar diferents estils i variants com les <em>malles</em> i les diverses variacions: la <em>malla de sargit</em> i la <em>malla de guipur</em>.</p>
+    <div class="images">
+      <img src="/assets/images/ccam-alt-pirineu-i-aran.jpg" alt="">
+      <img src="/assets/images/ccam-alt-pirineu-i-aran.jpg" alt="">
+      <img src="/assets/images/ccam-alt-pirineu-i-aran.jpg" alt="">
+    </div>
+    <p>Trobem les puntes populars catalanes, o més conegudes com <em>puntes al coixí</em>, aquestes es fan amb <em>coixí llarg</em>.</p>
+    <div class="images">
+      <img src="/assets/images/ccam-alt-pirineu-i-aran.jpg" alt="">
+      <img src="/assets/images/ccam-alt-pirineu-i-aran.jpg" alt="">
+      <img src="/assets/images/ccam-alt-pirineu-i-aran.jpg" alt="">
+      <img src="/assets/images/ccam-alt-pirineu-i-aran.jpg" alt="">
+    </div>
+
+    <p>També podem fer punta al coixí rodó.</p>
+    <div class="images">
+      <img src="/assets/images/ccam-alt-pirineu-i-aran.jpg" alt="">
+      <img src="/assets/images/ccam-alt-pirineu-i-aran.jpg" alt="">
+      <img src="/assets/images/ccam-alt-pirineu-i-aran.jpg" alt="">
+      <img src="/assets/images/ccam-alt-pirineu-i-aran.jpg" alt="">
+    </div>
+
+    <p>Punta a l'agulla.</p>
+    <div class="images">
+      <img src="/assets/images/ccam-alt-pirineu-i-aran.jpg" alt="">
+      <img src="/assets/images/ccam-alt-pirineu-i-aran.jpg" alt="">
+      <img src="/assets/images/ccam-alt-pirineu-i-aran.jpg" alt="">
+      <img src="/assets/images/ccam-alt-pirineu-i-aran.jpg" alt="">
+    </div>
+
+    <Button type="light" url="#" title="Més informació" />
+  </div>
+</section>
+
+<style lang="scss">
+  @import "../css/global";
+
+  .color-section {
+    background-color: transparent;
+  }
+
+  p {
+    width: 100%;
+  }
+
+  ul {
+    width: 100%;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  .images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    gap: 2rem;
+    margin-top: 0;
+    width: 100%;
+
+    img {
+      width: 200px;
+      height: 200px;
+      border-radius: $border-radius;
+      box-shadow: var(--box-shadow2);
+    }
+  }
+</style>

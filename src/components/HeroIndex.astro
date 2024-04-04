@@ -1,0 +1,112 @@
+---
+import Button from "../components/button.astro"
+---
+
+<div class="color-section full-height">
+  <section class="hero">
+    <div class="wrapper">
+      <div class="hero-info">
+        <div class="copy">
+          <h1>Puntaires de</h1>
+          <strong>Barcelona</strong>
+          <p>L'escola de la punta</p>
+        </div>
+        <div class="image">
+          <img src="/assets/images/puntaire.svg" alt="">
+          <h3>Trenem escola des de 1962</h3>
+        </div>
+      </div>
+      <div class="hero-cta">
+        <Button type="light" url="#" title="Visita'ns"></Button>
+        <Button type="dark" url="#" title="Contacta"></Button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<style lang="scss">
+  @import "../css/variables";
+
+  .color-section {
+    background-color: white;
+  }
+
+  .hero {
+    background: radial-gradient(ellipse at bottom, #BBFFEF, lighten($bg-transparent, 0), lighten($bg-transparent, 0), #FFE7DC), radial-gradient(ellipse at top, #BBFFEF, lighten($bg-transparent, 0), #CCC9A1, lighten($bg-transparent, 0)) fixed;
+    font-family: var(--font-hero-index);
+    color: $fg-color-secondary;
+    z-index: 0;
+
+    .wrapper {
+      max-width: 1600px;
+      margin: 0 auto;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      padding: var(--padding-section);
+    }
+
+    .hero-info {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      a {
+        background-color: $bg-light;
+        border-radius: 8px;
+        padding: .5rem 1rem;
+        font-family: var(--font-default);
+        font-style: italic;
+        text-decoration: none;
+        color: $fg-color-primary;
+        transition: background-color .3s ease-in-out, color .3s ease-in-out;
+
+        &:hover {
+          background-color: lighten($bg-default, 5);
+          color: $fg-color-light;
+        }
+      }
+    }
+
+    .copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      h1, strong {
+        font-size: 96px;
+        color: $fg-color-secondary;
+        line-height: .8;
+      }
+
+      p {
+        font-size: 40px;
+        font-weight: 700;
+        margin-top: 1rem;
+      }
+    }
+
+    .image {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      img {
+        width: 350px;
+      }
+
+      h3 {
+        font-family: var(--font-italianno);
+        font-size: 48px;
+        color: $fg-color-secondary;
+      }
+    }
+  }
+</style>

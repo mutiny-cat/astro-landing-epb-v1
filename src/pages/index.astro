@@ -1,16 +1,38 @@
 ---
+import Layout from "../layouts/DefaultLayout.astro"
 
+import Hero from "../components/HeroIndex.astro"
+import Rodoreda from "../components/RodoredaIndex.astro"
+import Escola from "../components/EscolaIndex.astro"
+import Formacio from "../components/FormacioIndex.astro"
+import PuntaBarcelona from "../components/PuntaBarcelonaIndex.astro"
+import Estils from "../components/EstilsIndex.astro"
+import Faqs from "../components/FaqsIndex.astro"
+import Visitans from "../components/VisitansIndex.astro"
+import Links from "../components/LinksIndex.astro"
+
+const pageTitle = "Benvinguts"
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>Landing page EPB - V1</h1>
-  </body>
-</html>
+<Layout pageTitle={pageTitle}>
+  <Hero />
+  <main>
+    <Rodoreda />
+    <Escola />
+    <Formacio />
+    <PuntaBarcelona />
+    <Estils />
+    <Faqs />
+    <Visitans />
+    <Links />
+  </main>
+</Layout>
+
+<style lang="scss">
+  @import "../css/global";
+
+  main {
+    min-height: 100vh;
+    margin: 0 auto;
+  }
+</style>

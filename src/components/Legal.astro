@@ -1,0 +1,32 @@
+---
+
+---
+
+<section>
+  <div>
+    <a href="#" title="Avís legal">Avís legal</a>
+    <a href="#" title="Política de privacitat">Política de privacitat</a>
+    <a href="#" title="Política de cookies">Política de cookies</a>
+  </div>
+</section>
+
+<style lang="scss">
+  @import "../css/variables";
+
+  div {
+    margin: 0 auto;
+    padding: 32px 0;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-evenly;
+
+    a {
+      color: $fg-color-title;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline 1px dotted;
+      }
+    }
+  }
+</style>
