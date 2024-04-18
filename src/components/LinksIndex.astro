@@ -4,7 +4,50 @@
 
 <section class="color-section links">
   <div class="wrapper-section">
-
+    <ul class="cards-links">
+      <li>
+        <article class="card-link">
+          <a href="https://educacio.gencat.cat/ca/inici" title="Enllaça amb el web de la Generalitat de Catalunya. Departament d'Educació." target="_blank">
+            <img src="/assets/images/logo-educacio-v.png" alt="Logotip de la Generalitat de Catalunya. Departament d'Educació.">
+          </a>
+        </article>
+      </li>
+      <li>
+        <article class="card-link">
+          <a href="https://cultura.gencat.cat/ca/inici" title="Enllaça amb el web de la Generalitat de Catalunya. Departament de Cultura." target="_blank">
+            <img src="/assets/images/logo-cultura-v.png" alt="Logotip de la Generalitat de Catalunya. Departament de Cultura.">
+          </a>
+        </article>
+      </li>
+      <li>
+        <article class="card-link">
+          <a href="https://ccam.gencat.cat/ca/inici" title="Enllaça amb el web del Consorci de Comerç, Artesania i Moda de Catalunya. Generalitat de Catalunya." target="_blank">
+            <img src="/assets/images/logo-ccam.png" alt="Logotip del Consorci de Comerç, Artesania i Moda de Catalunya. Generalitat de Catalunya.">
+          </a>
+        </article>
+      </li>
+      <li>
+        <article class="card-link">
+          <a href="https://www.llotja.cat/" title="Enllaça amb el web de Llotja, Escola d'Art i Disseny de Barcelona." target="_blank">
+            <img src="/assets/images/logo-llotja.svg" alt="Logotip de Llotja, Escola d'Art i Disseny de Barcelona.">
+          </a>
+        </article>
+      </li>
+      <li>
+        <article class="card-link">
+          <a href="https://www.barcelona.cat/barcelonacultura/ca/icub" title="Enllaça amb el web de l'Institut de cultura de Barcelona. Ajuntament de Barcelona." target="_blank">
+            <img src="/assets/images/logo-icub.png" alt="Logotip de l'Institut de cultura de Barcelona. Ajuntament de Barcelona.">
+          </a>
+        </article>
+      </li>
+      <li>
+        <article class="card-link">
+          <a href="https://www.oidfa.com/" title="Enllaça amb el web de l'Organisation Internationale de la Dentelle au Fuseau et à l’Aiguille." target="_blank">
+            <img src="/assets/images/logo-oidfa.png" alt="Logotip de l'Organisation Internationale de la Dentelle au Fuseau et à l’Aiguille.">
+          </a>
+        </article>
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -12,11 +55,44 @@
   @import "../css/global";
 
   .links {
-    background: linear-gradient(90deg, #917E41 0%, #F7D66F 100%);
+    background: linear-gradient(90deg, darken($fg-color-title, 10) 0%, darken($fg-color-title, 30) 100%);
   }
 
   .wrapper-section {
-    background-color: chocolate;
+    max-width: 1600px;
+  }
+
+  .cards-links {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    gap: 2rem;
+  }
+
+  .card-link {
+
+    a {
+      font-family: var(--font-cite);
+      font-style: italic;
+      color: $fg-color-text-dark;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        text-decoration: underline dotted;
+      }
+
+      img {
+        width: 100px;
+        max-width: 100px;
+      }
+    }
   }
 </style>
-

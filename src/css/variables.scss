@@ -1,6 +1,6 @@
 $font-default: "Alegreya Variable", serif;
 $bg-default: #00684F;
-$bg-light: #F9FAFB;
+$bg-light: #F0FFFF;
 $bg-dark: #033D2E;
 $bg-transparent: transparent;
 
@@ -10,6 +10,14 @@ $fg-color-title: #F7D66F;
 $fg-color-light: #F0FFFF;
 $fg-color-text: #F0FFFF;
 $fg-color-text-dark: #383F46;
+
+// Transports
+$bus-color-red: rgba(218, 41, 28,1); /*55 - 120 - 141 - 52*/
+$bus-color-blue: rgba(0, 56 , 136,1); /*H16 - H12*/
+$bus-color-purple: rgba(147, 16, 126, 1); /*D50*/
+$bus-color-green: rgba(106, 176, 35,1); /*V11*/
+$metro-color-l1: rgba(206, 17, 38,1); /*L1*/
+$metro-color-l2:  rgba(147, 36, 143,1); /*L2*/
 
 $border-radius: 4px;
 

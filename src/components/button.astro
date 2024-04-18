@@ -1,8 +1,8 @@
 ---
-const { type, url, title} = Astro.props
+const { typeClass, url, title} = Astro.props
 ---
 
-<a class={type} href={url} title={title}>{title}</a>
+<a class={typeClass} href={url} title={title}>{title}</a>
 
 <style lang="scss">
   @import "../css/variables";
