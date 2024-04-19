@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Arial Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Arial Bold'), url('/assets/fonts/ARIALBD.woff') format('woff');
+}
+
 $font-default: "Alegreya Variable", serif;
 $bg-default: #00684F;
 $bg-light: #F0FFFF;
@@ -11,6 +18,8 @@ $fg-color-light: #F0FFFF;
 $fg-color-text: #F0FFFF;
 $fg-color-text-dark: #383F46;
 
+$border-radius: 4px;
+
 // Transports
 $bus-color-red: rgba(218, 41, 28,1); /*55 - 120 - 141 - 52*/
 $bus-color-blue: rgba(0, 56 , 136,1); /*H16 - H12*/
@@ -18,8 +27,9 @@ $bus-color-purple: rgba(147, 16, 126, 1); /*D50*/
 $bus-color-green: rgba(106, 176, 35,1); /*V11*/
 $metro-color-l1: rgba(206, 17, 38,1); /*L1*/
 $metro-color-l2:  rgba(147, 36, 143,1); /*L2*/
-
-$border-radius: 4px;
+$size-icon-transport-type: 64px;
+$size-icon-transport-line: 32px;
+$size-icon-transport-vehicle: 32px;
 
 :root {
   --font-default: "Alegreya Variable", serif;
@@ -27,6 +37,7 @@ $border-radius: 4px;
   --font-hero-index: "Cinzel Variable", serif;
   --font-title: "Alegreya SC", serif;
   --font-cite: "Alegreya SC", serif;
+  --font-transport: "Arial Bold", sans-serif;
   --color-menu-dark: #033D2E;
   --color-menu-light: #FFFFFF;
   --color-border: rgb(100, 200, 100);
@@ -35,6 +46,6 @@ $border-radius: 4px;
   --padding-section: 128px;
   
   --box-shadow: 0 2px 6px rgba(var(--color-border), 100%), 0 8px 24px rgba(var(--color-border), 100%), 0 16px 32px rgba(var(--color-border), 100%);
-  --box-shadow2: 0 2px 6px rgba(var(--border-card), 25%), 0 8px 24px rgba(var(--border-card), 15%), 0 16px 32px rgba(var(--border-card), 15%);
+  --box-shadow2: 0 2px 6px rgba(100, 200, 100,.1), 0 8px 24px rgba(100, 200, 100,.1), 0 16px 32px rgba(100, 200, 100,.1);
 }
 

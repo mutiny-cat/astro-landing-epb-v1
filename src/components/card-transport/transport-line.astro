@@ -1,0 +1,51 @@
+---
+const { classLine, nameLine } = Astro.props
+---
+
+<div class={classLine}>
+  <span>{nameLine}</span>
+</div>
+
+<style lang="scss">
+  @import "../../css/global";
+
+  div {
+    background-color: $bus-color-red;
+    border-radius: 50%;
+    width: $size-icon-transport-line;
+    height: $size-icon-transport-line;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      font-family: var(--font-transport);
+      font-size: 12px;
+    }
+  }
+
+  .line-l1 {
+    border-radius: 0;
+    background-color: $metro-color-l1;
+  }
+
+  .line-l2 {
+    border-radius: 0;
+    background-color: $metro-color-l2;
+  }
+
+  .line-h {
+    border-radius: 50%;
+    background-color: $bus-color-blue;
+  }
+
+  .line-d {
+    border-radius: 50%;
+    background-color: $bus-color-purple;
+  }
+
+  .line-v {
+    border-radius: 50%;
+    background-color: $bus-color-green;
+  }
+</style>

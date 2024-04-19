@@ -1,5 +1,12 @@
 ---
 import Button from "../components/button.astro"
+
+import LogoMetro from "../components/card-transport/logo-metro.astro"
+import LogoBus   from "../components/card-transport/logo-bus.astro"
+import TransportLine from "./card-transport/transport-line.astro"
+import TransportStop from "./card-transport/transport-stop.astro"
+import IconMetro from "./card-transport/icon-metro.astro";
+import IconBus from "./card-transport/icon-bus.astro";
 ---
 
 <section class="color-section">
@@ -108,42 +115,127 @@ import Button from "../components/button.astro"
       <ul class="cards-transport">
         <li>
           <article class="card-transport">
-            <div>
-              <img src="/assets/images/logo-metro-barcelona.svg" alt="">
-            </div>
-            <div class="lines">
-              <div class="transport-line">
-                <p>line</p>
-                <p>line</p>
-                <p>line</p>
-              </div>
-              <div class="transport-parada">
-                <svg width="17" height="20" viewBox="0 0 17 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M13.1317 17.2476H13.588C14.1598 17.2476 14.7082 17.0204 15.1125 16.6161C15.5168 16.2118 15.744 15.6634 15.744 15.0916V2.15595C15.744 1.58415 15.5168 1.03578 15.1125 0.631462C14.7082 0.227144 14.1598 0 13.588 0H3.41196C2.84016 0 2.29179 0.227144 1.88747 0.631462C1.48315 1.03578 1.25601 1.58415 1.25601 2.15595V15.0916C1.25601 15.6634 1.48315 16.2118 1.88747 16.6161C2.29179 17.0204 2.84016 17.2476 3.41196 17.2476H3.8683L0.79248 20H2.7508L3.73535 19.1197H13.2826L14.2671 20H16.2075L13.1317 17.2476ZM12.8119 15.9217C12.5987 15.9217 12.3903 15.8584 12.213 15.74C12.0357 15.6215 11.8976 15.4532 11.816 15.2562C11.7344 15.0592 11.713 14.8425 11.7546 14.6334C11.7962 14.4243 11.8989 14.2322 12.0496 14.0815C12.2004 13.9307 12.3925 13.828 12.6016 13.7864C12.8107 13.7448 13.0274 13.7662 13.2244 13.8478C13.4214 13.9294 13.5897 14.0675 13.7082 14.2448C13.8266 14.4221 13.8899 14.6305 13.8899 14.8437C13.8923 14.9859 13.8661 15.1272 13.8128 15.2591C13.7594 15.391 13.6801 15.5108 13.5795 15.6114C13.479 15.7119 13.3592 15.7913 13.2273 15.8446C13.0954 15.8979 12.9541 15.9241 12.8119 15.9217ZM6.08533 0.83004H10.9111C11.0683 0.83004 11.2191 0.892504 11.3303 1.00369C11.4415 1.11488 11.5039 1.26568 11.5039 1.42292C11.5039 1.58017 11.4415 1.73097 11.3303 1.84216C11.2191 1.95335 11.0683 2.01581 10.9111 2.01581H6.08892C5.93168 2.01581 5.78088 1.95335 5.66969 1.84216C5.5585 1.73097 5.49604 1.58017 5.49604 1.42292C5.49604 1.26568 5.5585 1.11488 5.66969 1.00369C5.78088 0.892504 5.93168 0.83004 6.08892 0.83004H6.08533ZM2.33398 9.38196V3.95616C2.33398 3.67027 2.44755 3.39608 2.64971 3.19392C2.85187 2.99176 3.12606 2.87819 3.41196 2.87819H13.588C13.8739 2.87819 14.1481 2.99176 14.3503 3.19392C14.5524 3.39608 14.666 3.67027 14.666 3.95616V9.38196C14.666 9.66786 14.5524 9.94205 14.3503 10.1442C14.1481 10.3464 13.8739 10.4599 13.588 10.4599H3.41196C3.12606 10.4599 2.85187 10.3464 2.64971 10.1442C2.44755 9.94205 2.33398 9.66786 2.33398 9.38196ZM3.11012 14.8617C3.11015 14.6477 3.17385 14.4386 3.29312 14.2609C3.41238 14.0833 3.58181 13.9452 3.77983 13.8641C3.97785 13.7831 4.19551 13.7628 4.40509 13.8059C4.61468 13.849 4.8067 13.9534 4.95672 14.106C5.10673 14.2586 5.20796 14.4523 5.2475 14.6626C5.28704 14.8729 5.26312 15.0902 5.17877 15.2868C5.09441 15.4834 4.95345 15.6505 4.77384 15.7668C4.59422 15.883 4.38406 15.9432 4.17013 15.9396C4.0294 15.9397 3.89008 15.9117 3.76029 15.8573C3.6305 15.8029 3.51284 15.7232 3.41417 15.6228C3.3155 15.5225 3.2378 15.4035 3.1856 15.2728C3.13339 15.1421 3.10774 15.0024 3.11012 14.8617ZM5.14749 17.8261L5.78709 17.2476H11.2237L11.8381 17.8261H5.14749Z"/>
-                  </svg>
-                <p>Parada <span>Baixada</span></p>
+            <div class="transport-type">
+              <div class="transport-logo">
+                <LogoMetro />
               </div>
             </div>
+            <ul class="transport-lines">
+              <li>
+                <TransportLine classLine="line-l1" nameLine="L1"/>
+              </li>
+            </ul>
+            <ul class="transport-stop">
+              <li>
+                <div class="transport-icon-vehicle">
+                  <IconMetro />
+                </div>
+                <div class="transport-station">
+                  <TransportStop stop="Universitat - " exit="sortida Sant Antoni"/>
+                </div>
+              </li>
+              <li>
+                <div class="transport-icon-vehicle">
+                  <IconMetro />
+                </div>
+                <div class="transport-station">
+                  <TransportStop stop="Urgell - " exit="sortida Villarroel/Sepúlveda"/>
+                </div>
+              </li>
+            </ul>
+            <ul class="transport-lines">
+              <li>
+                <TransportLine classLine="line-l2" nameLine="L2"/>
+              </li>
+            </ul>
+            <ul class="transport-stop">
+              <li>
+                <div class="transport-icon-vehicle">
+                  <IconMetro />
+                </div>
+                <div class="transport-station">
+                  <TransportStop stop="Sant Antoni - " exit="sortida Villarroel"/>
+                </div>
+              </li>
+              <li>
+                <div class="transport-icon-vehicle">
+                  <IconMetro />
+                </div>
+                <div class="transport-station">
+                  <TransportStop stop="Universitat - " exit="sortida Sant Antoni"/>
+                </div>
+              </li>
+            </ul>
           </article>
         </li>
         <li>
           <article class="card-transport">
-            <div>
-              <img src="/assets/images/logo-bus-barcelona.svg" alt="">
-            </div>
-            <div class="lines">
-              <div class="transport-line">
-                <p>line</p>
-                <p>line</p>
-                <p>line</p>
-              </div>
-              <div class="transport-parada">
-                <svg width="17" height="20" viewBox="0 0 17 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M13.1317 17.2476H13.588C14.1598 17.2476 14.7082 17.0204 15.1125 16.6161C15.5168 16.2118 15.744 15.6634 15.744 15.0916V2.15595C15.744 1.58415 15.5168 1.03578 15.1125 0.631462C14.7082 0.227144 14.1598 0 13.588 0H3.41196C2.84016 0 2.29179 0.227144 1.88747 0.631462C1.48315 1.03578 1.25601 1.58415 1.25601 2.15595V15.0916C1.25601 15.6634 1.48315 16.2118 1.88747 16.6161C2.29179 17.0204 2.84016 17.2476 3.41196 17.2476H3.8683L0.79248 20H2.7508L3.73535 19.1197H13.2826L14.2671 20H16.2075L13.1317 17.2476ZM12.8119 15.9217C12.5987 15.9217 12.3903 15.8584 12.213 15.74C12.0357 15.6215 11.8976 15.4532 11.816 15.2562C11.7344 15.0592 11.713 14.8425 11.7546 14.6334C11.7962 14.4243 11.8989 14.2322 12.0496 14.0815C12.2004 13.9307 12.3925 13.828 12.6016 13.7864C12.8107 13.7448 13.0274 13.7662 13.2244 13.8478C13.4214 13.9294 13.5897 14.0675 13.7082 14.2448C13.8266 14.4221 13.8899 14.6305 13.8899 14.8437C13.8923 14.9859 13.8661 15.1272 13.8128 15.2591C13.7594 15.391 13.6801 15.5108 13.5795 15.6114C13.479 15.7119 13.3592 15.7913 13.2273 15.8446C13.0954 15.8979 12.9541 15.9241 12.8119 15.9217ZM6.08533 0.83004H10.9111C11.0683 0.83004 11.2191 0.892504 11.3303 1.00369C11.4415 1.11488 11.5039 1.26568 11.5039 1.42292C11.5039 1.58017 11.4415 1.73097 11.3303 1.84216C11.2191 1.95335 11.0683 2.01581 10.9111 2.01581H6.08892C5.93168 2.01581 5.78088 1.95335 5.66969 1.84216C5.5585 1.73097 5.49604 1.58017 5.49604 1.42292C5.49604 1.26568 5.5585 1.11488 5.66969 1.00369C5.78088 0.892504 5.93168 0.83004 6.08892 0.83004H6.08533ZM2.33398 9.38196V3.95616C2.33398 3.67027 2.44755 3.39608 2.64971 3.19392C2.85187 2.99176 3.12606 2.87819 3.41196 2.87819H13.588C13.8739 2.87819 14.1481 2.99176 14.3503 3.19392C14.5524 3.39608 14.666 3.67027 14.666 3.95616V9.38196C14.666 9.66786 14.5524 9.94205 14.3503 10.1442C14.1481 10.3464 13.8739 10.4599 13.588 10.4599H3.41196C3.12606 10.4599 2.85187 10.3464 2.64971 10.1442C2.44755 9.94205 2.33398 9.66786 2.33398 9.38196ZM3.11012 14.8617C3.11015 14.6477 3.17385 14.4386 3.29312 14.2609C3.41238 14.0833 3.58181 13.9452 3.77983 13.8641C3.97785 13.7831 4.19551 13.7628 4.40509 13.8059C4.61468 13.849 4.8067 13.9534 4.95672 14.106C5.10673 14.2586 5.20796 14.4523 5.2475 14.6626C5.28704 14.8729 5.26312 15.0902 5.17877 15.2868C5.09441 15.4834 4.95345 15.6505 4.77384 15.7668C4.59422 15.883 4.38406 15.9432 4.17013 15.9396C4.0294 15.9397 3.89008 15.9117 3.76029 15.8573C3.6305 15.8029 3.51284 15.7232 3.41417 15.6228C3.3155 15.5225 3.2378 15.4035 3.1856 15.2728C3.13339 15.1421 3.10774 15.0024 3.11012 14.8617ZM5.14749 17.8261L5.78709 17.2476H11.2237L11.8381 17.8261H5.14749Z"/>
-                  </svg>
-                <p>Parada <span>Baixada</span></p>
+            <div class="transport-type">
+              <div class="transport-logo">
+                <LogoBus />
               </div>
             </div>
+            <ul class="transport-lines">
+              <li>
+                <TransportLine classLine="" nameLine="55"/>
+                <TransportLine classLine="" nameLine="120"/>
+                <TransportLine classLine="" nameLine="141"/>
+                <TransportLine classLine="line-d" nameLine="D50"/>
+                <TransportLine classLine="line-v" nameLine="V11"/>
+                <TransportLine classLine="line-h" nameLine="H16"/>
+              </li>
+            </ul>
+            <ul class="transport-stop">
+              <li>
+                <div class="transport-icon-vehicle">
+                  <IconBus />
+                </div>
+                <div class="transport-station">
+                  <TransportStop stop="Tamarit - Mercat de Sant Antoni" />
+                </div>
+              </li>
+            </ul>
+            <ul class="transport-lines">
+              <li>
+                <TransportLine classLine="" nameLine="52"/>
+                <TransportLine classLine="line-h" nameLine="H12"/>
+              </li>
+            </ul>
+            <ul class="transport-stop">
+              <li>
+                <div class="transport-icon-vehicle">
+                  <IconBus />
+                </div>
+                <div class="transport-station">
+                  <TransportStop stop="Gran Via - Urgell"/>
+                </div>
+              </li>
+            </ul>
+            <ul class="transport-stop">
+              <li>
+                <div class="transport-icon-vehicle">
+                  <IconBus />
+                </div>
+                <div class="transport-station">
+                  <TransportStop stop="Tamarit - Mercat de Sant Antoni" />
+                </div>
+              </li>
+            </ul>
+            <ul class="transport-lines">
+              <li>
+                <TransportLine classLine="" nameLine="120"/>
+              </li>
+            </ul>
+            <ul class="transport-stop">
+              <li>
+                <div class="transport-icon-vehicle">
+                  <IconBus />
+                </div>
+                <div class="transport-station">
+                  <TransportStop stop="Riera Alta - Nou Dulce"/>
+                </div>
+              </li>
+            </ul>
           </article>
         </li>
       </ul>
@@ -230,7 +322,6 @@ import Button from "../components/button.astro"
   }
 
   .map {
-
     img {
       width: 100%;
       max-width: 960px;
@@ -264,7 +355,7 @@ import Button from "../components/button.astro"
       }
 
       span {
-        font-size: 14px;
+        font-size: 16px;
         line-height: 0;
       }
     }
@@ -277,35 +368,63 @@ import Button from "../components/button.astro"
     margin-top: 1rem;
 
     .card-transport {
-      background-color: $bg-dark;
-      border-radius: $border-radius;
+      background-color : $bg-dark;
+      box-shadow       : var(--box-shadow2);
+      width            : 275px;
+      height           : 416px;
+      padding          : 16px;
+      border-radius    : $border-radius;
+      display          : flex;
+      flex-direction   : column;
+      align-items      : center;
+    }
+
+    .transport-type {
+      border-bottom: 1px solid $fg-color-title;
+      margin-bottom: 1rem;
+      padding-bottom: 12px;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      padding: 1rem;
-      width: 275px;
-      height: 275px;
+      width: 100%;
+    }
 
-      .lines {
-        background-color: chocolate;
-        margin-top: .5rem;
+    .transport-logo {
+      width: $size-icon-transport-type;
+      height: $size-icon-transport-type;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .transport-lines {
+      width: 100%;
+
+      li {
+        display: flex;
+        gap: 6px;
         width: 100%;
+        margin: 12px 0 6px;
       }
+    }
 
-      img {
-        height: 48px;
-      }
+    .transport-stop {
+      width: 100%;
 
-      .transport-line {
+      li {
         display: flex;
         align-items: center;
-        gap: .5rem;
-      }
+        margin: 6px 0 0 12px;
+        color: $fg-color-title;
 
-      .transport-parada {
-        display: flex;
-        align-items: center;
-        gap: .2rem;
+        .transport-icon-vehicle {
+          width: $size-icon-transport-vehicle;
+          height: $size-icon-transport-vehicle;
+        }
+
+        .transport-station {
+          line-height: 0;
+        }
       }
     }
   }
