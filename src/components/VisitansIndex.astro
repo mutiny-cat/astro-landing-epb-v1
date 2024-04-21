@@ -5,14 +5,14 @@ import LogoMetro from "../components/card-transport/logo-metro.astro"
 import LogoBus   from "../components/card-transport/logo-bus.astro"
 import TransportLine from "./card-transport/transport-line.astro"
 import TransportStop from "./card-transport/transport-stop.astro"
-import IconMetro from "./card-transport/icon-metro.astro";
-import IconBus from "./card-transport/icon-bus.astro";
+import IconMetro from "./card-transport/icon-metro.astro"
+import IconBus from "./card-transport/icon-bus.astro"
 ---
 
 <section class="color-section">
   <div class="wrapper-section">
     <h2>Visita'ns</h2>
-    <section>
+    <section class="schedule">
       <h3>Horaris</h3>
       <ul class="cards-days">
         <li>
@@ -88,7 +88,7 @@ import IconBus from "./card-transport/icon-bus.astro";
       </svg>
       <h3>Local adaptat</h3>
     </section>
-    <section>
+    <section class="arrive">
       <h4>Com arribar</h4>
       <article class="map">
         <a href="https://w33.bcn.cat/planolBCN/ca/guia/address/Sant-Erasme,-1/zoom/3/position/430160,4581423/" title="Enllaça amb el plànol del web barcelona.cat. Ajuntament de Barcelona." target="_blank">
@@ -110,7 +110,7 @@ import IconBus from "./card-transport/icon-bus.astro";
         </div>
       </article>
     </section>
-    <section>
+    <section class="transport">
       <h4>Transport</h4>
       <ul class="cards-transport">
         <li>
@@ -239,6 +239,9 @@ import IconBus from "./card-transport/icon-bus.astro";
           </article>
         </li>
       </ul>
+    </section>
+    <section class="contact">
+      <h4>Contacta</h4>
     </section>
     <Button typeClass="light" url="#" title="Contacta" />
   </div>
@@ -426,6 +429,13 @@ import IconBus from "./card-transport/icon-bus.astro";
         .transport-station {
           line-height: 0;
         }
+      }
+    }
+
+    .contact {
+      .contact-form {
+        background-color: chocolate;
+        padding: 1rem;
       }
     }
   }
