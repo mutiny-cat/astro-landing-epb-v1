@@ -2,19 +2,31 @@
 import Button from "../components/button.astro"
 ---
 
-<section class="color-section">
+<section id="estils" class="color-section">
   <div class="wrapper-section">
     <h2>Estils i mostres</h2>
     <p>L’origen de la punta és incert, però sí que sabem que el <em>punt a l’agulla</em> deriva del brodat i la <em>punta al coixí</em>, del teixit.</p>
     <p>Possiblement tot comenci amb l'antic art del <em>macramé</em>, paraula d'origen àrab que significa <em>nus</em>.</p>
     <div class="images">
-      <img src="/assets/images/ccam-alt-pirineu-i-aran.jpg" alt="">
+      <div class="image-punta">
+        <img src="/assets/images/img-punta-macrame.jpg" alt="Imatge d'una peça de macramé.">
+        <p>Peça de macramé.</p>
+      </div>
     </div>
     <p>A partir d'aquí podem trobar diferents estils i variants com les <em>malles</em> i les diverses variacions: la <em>malla de sargit</em> i la <em>malla de guipur</em>.</p>
     <div class="images">
-      <img src="/assets/images/ccam-alt-pirineu-i-aran.jpg" alt="">
-      <img src="/assets/images/ccam-alt-pirineu-i-aran.jpg" alt="">
-      <img src="/assets/images/ccam-alt-pirineu-i-aran.jpg" alt="">
+      <div>
+        <img src="/assets/images/img-punta-malla-paraguaiana.jpg" alt="Imatge d'una peça de malla paraguaiana.">
+        <p>Peça de malla paraguaiana.</p>
+      </div>
+      <div>
+        <img src="/assets/images/img-punta-malla-sargit.jpg" alt="Imatge d'una peça de malla de sargit.">
+        <p>Peça de malla de sargit.</p>
+      </div>
+      <div>
+        <img src="/assets/images/img-punta-malla-guipur.jpg" alt="Imatge d'una peça de malla de guipur.">
+        <p>Peça de malla de guipur.</p>
+      </div>
     </div>
     <p>Trobem les puntes populars catalanes, o més conegudes com <em>puntes al coixí</em>, aquestes es fan amb <em>coixí llarg</em>.</p>
     <div class="images">
@@ -40,7 +52,7 @@ import Button from "../components/button.astro"
       <img src="/assets/images/ccam-alt-pirineu-i-aran.jpg" alt="">
     </div>
 
-    <Button typeClass="light" url="#" title="Més informació" />
+    <!--<Button typeClass="light" url="#" title="Més informació" />-->
   </div>
 </section>
 
@@ -74,11 +86,22 @@ import Button from "../components/button.astro"
     margin-top: 0;
     width: 100%;
 
+    p {
+      font-family: var(--font-default);
+      font-style: italic;
+      font-size: 16px;
+      color: $fg-color-title;
+      text-align: center;
+      margin-top: 4px;
+    }
+
     img {
-      width: 200px;
-      height: 200px;
+      $size: 200px;
+      width: $size;
+      height: $size;
       border-radius: $border-radius;
       box-shadow: var(--box-shadow2);
+      object-fit: contain;
     }
   }
 </style>

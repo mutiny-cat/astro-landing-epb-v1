@@ -10,6 +10,7 @@ import "../css/global.scss"
 
 import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
+import GoToTop from "../components/GoToTop.astro"
 
 const { pageTitle } = Astro.props
 const { title, description, faviconURL = "/assets/favicons/favicon-96.png", image = "/assets/images/opengraph/epb-hero.jpg" } = Astro.props
@@ -28,6 +29,7 @@ const { title, description, faviconURL = "/assets/favicons/favicon-96.png", imag
     <Header />
     <slot />
     <Footer />
+    <GoToTop />
     <div class="background"></div>
   </body>
 </html>

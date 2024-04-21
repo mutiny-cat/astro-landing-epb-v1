@@ -2,20 +2,27 @@
 import CardRuta from "../components/card-ruta.astro"
 ---
 
-<section class="color-section">
+<section id="puntabarcelona" class="color-section full-height">
   <div class="wrapper-index-section">
-    <article>
+    <article >
       <h2>Punta de Barcelona, <em>ofici singular</em></h2>
-      <p>La Punta de Barcelona és l’art de combinar el 50% de punta al coixí i l’altra 50% de punta a l’agulla.</p>
+      <p><strong>La Punta de Barcelona</strong> és l’art de combinar el 50% de punta al coixí i l’altra 50% de punta a l’agulla.</p>
       <p>Va ser creada a mitjans del segle XX per les germanes Raventós en motiu del <strong>Congrés Eucarístic de Barcelona</strong>.</p>
-      <p>Es poden trobar mostres d’aquesta tècnica a la Catedral de Barcelona i a la Basílica de la Sagrada Família de Barcelona. També podeu trobar mostres a la mateixa Escola de Puntaires.</p>
+      <p>Es poden trobar mostres d’aquesta tècnica a la <a href="https://catedralbcn.org/" title="Enllaça amb el web de la Catedral de Barcelona" target="_blank">Catedral de Barcelona <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+            <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+          </svg></a> i a la <a href="https://sagradafamilia.org/home" title="Enllaça amb el web de la Basílica de la Sagrada Família de Barcelona" target="_blank">Basílica de la Sagrada Família de Barcelona <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+          <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+        </svg></a>.
+         També es poden trobar mostres al museu de l'<strong>Escola de Puntaires</strong>.</p>
       <img src="/assets/images/punta-de-barcelona.png" alt="Imatge d'una Punta de Barcelona">
     </article>
     <article>
       <h2>Ofici singular</h2>
       <p>Catalunya presenta una àmplia varietat de sòls i climes, a més de les múltiples aportacions culturals fetes al llarg dels segles, de la tradició i l'esperit innovador dels seus artesans i artesanes, motius pels quals gaudeix arreu del territori de manifestacions artesanes de gran rellevància i representativitat.</p>
       <p>Catalunya gaudeix arreu del seu territori de  manifestacions artesanes de gran rellevància i representativitat.  Activitats artesanes que són pròpies i exclusives de diferents zones.</p>
-      <p>Oficis Singulars és un projecte que reconeix la identitat d'alguns oficis que ens són  propis, és a dir, oficis i productes únics i molt vinculats a la població o demarcació dels quals són originals.</p>
+      <p><i>Oficis Singulars</i> és un projecte que reconeix la identitat d'alguns oficis que ens són  propis, és a dir, oficis i productes únics i molt vinculats a la població o demarcació dels quals són originals.</p>
       <div class="video">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/bs4O46iUjKM?si=hGYNIcmNvvOoI2Xv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <a href="https://ccam.gencat.cat/ca/inici" title="Porta al web del Consorci de Comerç, Artesania i Moda de Catalunya" target="_blank">
@@ -86,6 +93,7 @@ import CardRuta from "../components/card-ruta.astro"
   }
 
   .wrapper-index-section {
+
     .cards-rutes {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -114,7 +122,28 @@ import CardRuta from "../components/card-ruta.astro"
     }
 
     strong {
+      font-weight: normal;
       font-style: italic;
+    }
+
+    a {
+      font-style: italic;
+      text-decoration: underline dotted;
+      color: currentColor;
+      transition: all .3s ease-in-out;
+
+      svg {
+        $size: 12px;
+        width: $size;
+        height: $size;
+        color: currentColor ;
+        margin: 0 2px;
+      }
+
+      &:hover {
+        color: $fg-color-title;
+        transition: all .3s ease-in-out;
+      }
     }
 
     p {

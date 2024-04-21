@@ -65,7 +65,7 @@
   .cards-links {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     justify-items: center;
     align-items: center;
     justify-content: center;
@@ -84,14 +84,17 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      transition: all .3s ease-in-out;
 
       &:hover {
-        text-decoration: underline dotted;
+        transform: scale(1.1);
+        transition: all .3s ease-in-out;
       }
 
       img {
-        width: 100px;
-        max-width: 100px;
+        $size: 150px;
+        width: $size;
+        max-width: $size;
       }
     }
   }
