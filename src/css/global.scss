@@ -5,7 +5,8 @@
 body {
   font-family: var(--font-default);
   font-weight: 400;
-  font-size: 24px;
+  font-size: 20px;
+  line-height: 1.6;
   margin: 0;
   color: $fg-color-text;
   background: linear-gradient(90deg, rgba(3,61,46,1) 0%, rgba(0,104,79,1) 35%, rgba(0,155,118,1) 100%);

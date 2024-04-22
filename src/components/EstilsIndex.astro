@@ -4,9 +4,12 @@ import Button from "../components/button.astro"
 
 <section id="estils" class="color-section">
   <div class="wrapper-section">
-    <h2>Estils i mostres</h2>
-    <p>L’origen de la punta és incert, però sí que sabem que el <em>punt a l’agulla</em> deriva del brodat i la <em>punta al coixí</em>, del teixit.</p>
-    <p>Possiblement tot comenci amb l'antic art del <em>macramé</em>, paraula d'origen àrab que significa <em>nus</em>.</p>
+    <article>
+      <h2>Estils i mostres</h2>
+      <p>L’origen de la punta és incert, però sí que sabem que el <em>punt a l’agulla</em> deriva del brodat i la <em>punta al coixí</em>, del teixit.</p>
+      <p>Possiblement tot comenci amb l'antic art del <em>macramé</em>, paraula d'origen àrab que significa <em>nus</em>.</p>
+
+    </article>
     <div class="images">
       <div class="image-punta">
         <img src="/assets/images/img-punta-macrame.jpg" alt="Imatge d'una peça de macramé.">
@@ -63,8 +66,23 @@ import Button from "../components/button.astro"
     background-color: transparent;
   }
 
-  p {
+  article {
     width: 100%;
+    max-width: 960px;
+  }
+
+  h2 {
+    margin-bottom: 2rem;
+    font-family: var(--font-title);
+    color: $fg-color-title;
+  }
+
+  p {
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   ul {
