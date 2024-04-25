@@ -15,14 +15,31 @@
 
   div {
     margin: 0 auto;
-    padding: 32px 0;
+    padding: 0 0 32px;
     font-size: 20px;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    gap: 32px;
+
+    @media (width >= 640px) {
+      flex-direction: row;
+    }
 
     a {
       color: $fg-color-title;
       text-decoration: none;
+      margin-bottom: 16px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @media (width >= 640px) {
+        margin-bottom: 0;
+      }
 
       &:hover {
         text-decoration: underline 1px dotted;

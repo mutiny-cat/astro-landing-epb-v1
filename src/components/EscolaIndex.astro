@@ -1,66 +1,99 @@
----
-
----
-
-<section id="escola" class="color-section escola">
-  <div class="wrapper">
-    <div class="escola-image">
+<section id="escola" class="color-section">
+  <article class="wrapper">
+    <div class="image">
       <img src="/assets/images/senyoretes.webp" alt="Imatge de les Senyoretes">
     </div>
-    <div class="escola-info">
+    <div class="info">
       <h2>L'escola</h2>
-      <p>El 1962 es crea la <em>Fundació del Patronat de la Fundació Antònia i Montserrat Raventós i Ventura, Escola de Puntaires de Barcelona</em>, integrada a <a href="https://www.escolamassana.cat/ca/" title="Enllaça amb el web de l'Escola Massana." target="_blank"></a>l'Escola Massana <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-  <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-</svg>.</p>
+      <p>El 1962 es crea la <em>Fundació del Patronat de la Fundació Antònia i Montserrat Raventós i Ventura, Escola de Puntaires de Barcelona</em>, integrada a <a href="https://www.escolamassana.cat/ca/" title="Enllaça amb el web de l'Escola Massana." target="_blank">l'Escola Massana</a>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/><path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/></svg>.</p>
       <p>La Fundació té per objecte l’ensenyament i el foment dels treballs  artístics de randes i puntes d’agulla, a mà i amb boixets de qualsevol  estil, amb especial suport als de l’estil tradicional català.</p>
     </div>
-  </div>
+  </article>
 </section>
 
 <style lang="scss">
   @import "../css/global";
 
-  .escola {
+  .color-section {
     background: linear-gradient(90deg, rgba(3,61,46,1) 0%, rgba(0,104,79,1) 35%, rgba(0,155,118,1) 100%);
     color: $fg-color-light;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: var(--padding-section) 0;
+    height: 100%;
   }
 
   .wrapper {
+    padding: var(--padding-section) 0 0;
     max-width: 960px;
-    margin: 128px auto 0;
+    width: 90%;
+    margin: 0 auto;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: space-evenly;
-    gap: 4rem;
-  }
+    min-height: 100vh;
 
-  .escola-image {
-    & img {
-      width: 350px;
+    @media (width >= 1024px) {
+      flex-direction: row;
+      align-items: center;
     }
   }
 
-  .escola-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 1rem;
+  .info {
+    padding: 64px 0 32px;
 
-    h2 {
-      text-align: center;
-      font-family: var(--font-title);
-      color: $fg-color-title;
+    @media (width >= 1024px) {
+      padding: 0;
+      margin-left: 32px;
     }
 
     p {
-      text-align: center;
+      margin-bottom: 16px;
 
-      font-weight: 400;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: $fg-color-title;
+      font-style: italic;
+
+      &:hover {
+        text-decoration: 1px underline dotted;
+      }
+    }
+
+    svg {
+      $size: 10px;
+      width: $size;
+      height: $size;
+      rotate: 0deg;
+      opacity: 1;
+      color: $fg-color-title;
+      vertical-align: super;
+    }
+  }
+
+  .image {
+    order: 1;
+    width: 75%;
+    max-width: 320px;
+    margin: 0 auto;
+
+    @media (width < 768px) { width: 75%; }
+
+    @media (width >= 1024px) {
+      width: 100%;
+      order: 0;
+    }
+
+    img {
+      border-radius: $border-radius;
+      margin-bottom: .5rem;
+      width: 100%;
     }
   }
 </style>

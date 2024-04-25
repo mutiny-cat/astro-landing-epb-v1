@@ -1,0 +1,162 @@
+---
+import Menu from "./partials/menu.astro"
+import Toggle from "./partials/toggle.astro"
+import Backdrop from "./partials/backdrop.astro"
+---
+
+<header>
+  <div>
+    <a class="header-logo" href="#top" title="Inici">
+      <picture>
+        <source srcset="/assets/images/panot-bcn.svg" type="image/svg+xml" media="(max-width: 1365px)" />
+        <img src="/assets/images/logo-escola.svg" alt="Logotip de l'Escola de Puntaires de Barcelona">
+      </picture>
+    </a>
+    <Toggle />
+    <nav id="header-landing" class="header-nav">
+      <Menu />
+    </nav>
+  </div>
+  <Backdrop />
+</header>
+
+<style lang="scss">
+  @import "../../css/global";
+
+  header {
+    background-color : rgba($bg-light, .95);
+    box-shadow       : var(--box-shadow2);
+    margin           : 0;
+    padding          : 0;
+    position         : fixed;
+    width            : 100%;
+    top              : 0;
+    z-index          : 3;
+
+    div {
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      padding: .5rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  a {
+    width: 128px;
+    height: auto;
+    color: $fg-color-secondary;
+    transition: all .3s ease-in-out;
+    padding: 8px 0;
+
+    @media (width < 1366px) {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    &:hover {
+      color: lighten($bg-default, 10);
+      transform: scale(1.1);
+      transition: all .3s ease-in-out;
+    }
+  }
+
+  .header-nav {
+    width: auto;
+
+    @media (width < 1366px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      opacity: 0;
+      height: 0;
+      transition: opacity .3s ease-in, height .3s ease-in;
+      pointer-events: none;
+
+      &.isActive {
+        opacity: 1;
+        height: 100vh;
+        transition: opacity .3s ease-in, height .3s ease-in;
+        pointer-events: auto;
+      }
+    }
+
+  }
+</style>
+
+<script>
+  const button = document.querySelector('.header-toggle')
+  const nav = document.querySelector('.header-nav')
+  const iconOpen = document.querySelector('.open')
+  const iconClose = document.querySelector('.close')
+  const turnOff = document.querySelectorAll('.menu-a')
+  const overflow = document.querySelector('.overflow')
+  const logo = document.querySelector('.header-logo')
+  const menuLi = document.querySelectorAll('.menu-li')
+  const menuItem = document.querySelectorAll('.menu-a')
+  const buttonGo= document.getElementById("gototop")
+
+  button.addEventListener('click', () => {
+    nav.classList.toggle('isActive')
+    iconOpen.classList.toggle('notActive')
+    iconClose.classList.toggle('notActive')
+    overflow.classList.toggle('notOverflow')
+    buttonGo.style.display = "none"
+  })
+
+  turnOff.forEach((cadA, i) => {
+    turnOff[i].addEventListener('click', () => {
+      nav.classList.remove('isActive')
+      iconOpen.classList.toggle('notActive')
+      iconClose.classList.toggle('notActive')
+      overflow.classList.remove('notOverflow')
+    })
+  })
+
+  logo.addEventListener('click', () => {
+    if (nav.classList.contains('isActive') || (iconOpen.classList.contains('notActive'))) {
+      nav.classList.remove('isActive')
+      iconOpen.classList.remove('notActive')
+      iconClose.classList.add('notActive')
+      overflow.classList.remove('notOverflow')
+    }
+  })
+
+  menuLi.forEach((cadLi, i) => {
+    menuLi[i].addEventListener('click', () => {
+      menuLi.forEach((cadaLi, i) => {
+        menuItem[i].classList.remove('isActive')
+      })
+
+      menuItem[i].classList.add('isActive')
+    })
+  })
+
+  buttonGo.addEventListener('click', () => {
+    document.body.scrollTop = 0
+    document.documentElement.scrollTop = 0
+  })
+
+  window.onscroll = function() {scrollFunction()}
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      buttonGo.style.display = "flex"
+    } else {
+      buttonGo.style.display = "none"
+    }
+  }
+</script>
+
+

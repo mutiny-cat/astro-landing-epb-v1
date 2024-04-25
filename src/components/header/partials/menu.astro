@@ -1,0 +1,62 @@
+---
+const menuItems = [
+  {"classItemLi": "menu-li", "classItemA": "menu-a", "url": "#escola", "title": "L'escola"},
+  {"classItemLi": "menu-li", "classItemA": "menu-a", "url": "#formacio", "title": "Formació"},
+  {"classItemLi": "menu-li", "classItemA": "menu-a", "url": "#puntabarcelona", "title": "Punta de Barcelona"},
+  {"classItemLi": "menu-li", "classItemA": "menu-a", "url": "#estils", "title": "Estils i mostres"},
+  {"classItemLi": "menu-li", "classItemA": "menu-a", "url": "#faqs", "title": "Preguntes freqüents"},
+  {"classItemLi": "menu-li", "classItemA": "menu-a menu-a-button", "url": "#contacta", "title": "Contacta"}
+]
+---
+
+<ul>
+  {
+    menuItems.map((menuItem) =>
+      <li class={menuItem.classItemLi}><a class={menuItem.classItemA} href={menuItem.url} title={menuItem.title}>{menuItem.title}</a></li>
+    )
+  }
+</ul>
+
+<style lang="scss">
+  @import "../../../css/global";
+
+  ul {
+    display: flex;
+    gap: 1rem;
+
+    @media (width < 1366px) {
+      flex-direction: column;
+    }
+  }
+
+  .menu-li {
+    text-align: center;
+
+    @media (width < 1366px) {
+      background-color: $bg-bronze;
+      border: 2px solid $bg-dark;
+      border-radius: $border-radius;
+    }
+  }
+
+  .menu-a {
+    display: block;
+    color: $fg-color-primary;
+    font-family: var(--font-cite);
+    font-size: 18px;
+    text-decoration: none;
+    padding: .5rem .8rem;
+    transition: color .3s ease-in;
+
+    &.isActive {
+      border-radius: $border-radius $border-radius 0 0;
+      background: lighten($bg-dark, 75);
+      /*border-bottom: 2px solid lighten($bg-default, 10);*/
+    }
+
+    &:hover {
+      color: lighten($bg-default, 10);
+      transition: color .3s ease-in;
+    }
+  }
+</style>

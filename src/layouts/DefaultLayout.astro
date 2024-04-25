@@ -8,7 +8,7 @@ import "@fontsource/italianno"
 
 import "../css/global.scss"
 
-import Header from "../components/Header.astro"
+import Header from "../components/header/Header.astro"
 import Footer from "../components/Footer.astro"
 import GoToTop from "../components/GoToTop.astro"
 
@@ -25,7 +25,7 @@ const { title, description, faviconURL = "/assets/favicons/favicon-96.png", imag
     <title>{pageTitle} | EPB</title>
   </head>
 
-  <body>
+  <body class="overflow">
     <Header />
     <slot />
     <Footer />
@@ -49,4 +49,5 @@ const { title, description, faviconURL = "/assets/favicons/favicon-96.png", imag
     opacity: 1;
   }
 </style>
+
 

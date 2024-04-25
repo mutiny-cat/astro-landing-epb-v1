@@ -122,9 +122,25 @@ import Email from "./email.astro"
 <style lang="scss">
   @import "../css/variables";
 
+  .wrapper {
+    max-width: 1600px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $fg-color-title;
+
+    @media (width >= 768px) {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+
   section {
     padding: var(--padding-section) 0;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 400;
   }
 
@@ -132,21 +148,37 @@ import Email from "./email.astro"
     font-family: var(--font-title);
     font-size: 24px;
     margin-bottom: 8px;
-  }
+    text-align: center;
 
-  .wrapper {
-    max-width: 1600px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
-    color: $fg-color-title;
+    @media (width >= 1024px) {
+      text-align: left;
+    }
   }
 
   .logo {
-    width: 200px;
+    width: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    @media (width >= 768px) {
+      width: 30%;
+    }
   }
 
   .menu-map {
+    margin-top: 32px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (width >= 768px) {
+      width: 30%;
+      margin-top: 0;
+    }
+
     li {
       margin-bottom: 4px;
     }
@@ -168,8 +200,21 @@ import Email from "./email.astro"
     }
   }
 
+  .contacta {
+    width: 100%;
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (width >= 640px) {
+      width: 30%;
+      margin-top: 0;
+    }
+  }
+
   .data {
-    margin-bottom: 32px;
+    margin-bottom: 16px;
 
     li {
       display: flex;
@@ -190,9 +235,11 @@ import Email from "./email.astro"
   }
 
   .xxss {
+
     ul {
       display: flex;
-      gap: 1rem;
+      justify-content: center;
+      gap: 64px;
     }
 
     a {
@@ -200,7 +247,7 @@ import Email from "./email.astro"
     }
 
     svg {
-      $size: 32px;
+      $size: 48px;
       width: $size;
       height: $size;
       transition: all .3s ease-in-out;

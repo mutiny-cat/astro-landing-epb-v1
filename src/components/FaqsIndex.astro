@@ -4,30 +4,49 @@ import Email from "../components/email.astro"
 ---
 
 <section id="faqs" class="color-section">
-  <div class="wrapper-section">
-    <h2>Preguntes freqüents</h2>
-    <ul>
-      <Accordion ask="Com contacto amb l'Escola?">
-        <p>Ho pots fer per correu electrònic, per telèfon o presencialment a l'escola. Totes les dades les tens <a href="#contacta" title="Contacta">aquí</a>. </p>
-      </Accordion>
-      <Accordion ask="Què faré a l'Escola?">
-        <p></p>
-      </Accordion>
-      <Accordion ask="Quins preus teniu?">
-        <p></p>
-      </Accordion>
-      <Accordion ask="Farem dibuix?">
-        <p></p>
-      </Accordion>
-      <Accordion ask="Feu classes particulars esporàdiques?">
-        <p></p>
-      </Accordion>
-    </ul>
+  <div class="wrapper">
+    <div class="container">
+      <h2>Preguntes freqüents</h2>
+      <ul>
+        <Accordion ask="Com contacto amb l'Escola?">
+          <p>Ho pots fer per correu electrònic, per telèfon o presencialment a l'escola. Totes les dades les tens <a href="#contacta" title="Contacta">aquí</a>. </p>
+        </Accordion>
+        <Accordion ask="Què faré a l'Escola?">
+          <p></p>
+        </Accordion>
+        <Accordion ask="Quins preus teniu?">
+          <p></p>
+        </Accordion>
+        <Accordion ask="Farem dibuix?">
+          <p></p>
+        </Accordion>
+        <Accordion ask="Feu classes particulars esporàdiques?">
+          <p></p>
+        </Accordion>
+      </ul>
+    </div>
   </div>
 </section>
 
 <style lang="scss">
   @import "../css/global";
+
+  .wrapper {
+    padding: var(--padding-section) 0 0;
+    max-width: 960px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 100vh;
+  }
+
+  h2 {
+    width: 100%;
+    margin-bottom: 2rem;
+    font-family: var(--font-title);
+  }
 
   ul {
     width: 100%;

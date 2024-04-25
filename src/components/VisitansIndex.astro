@@ -11,9 +11,9 @@ import Email from "../components/email.astro"
 ---
 
 <section id="contacta" class="color-section">
-  <div class="wrapper-section">
-    <h2>Contacta</h2>
+  <div class="wrapper">
     <section class="contact">
+      <h2>Contacta</h2>
       <ul class="cards-contact">
         <li>
           <article class="card-contact">
@@ -268,8 +268,53 @@ import Email from "../components/email.astro"
 <style lang="scss">
   @import "../css/global";
 
+  .wrapper {
+    padding: var(--padding-section) 0 0;
+    max-width: 960px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 100vh;
+  }
+
   section {
-    width: 100%;
+    margin-bottom: 32px;
+  }
+
+  .contact {
+    .cards-contact {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      justify-items: center;
+      /*align-items: center;*/
+      justify-content: center;
+      align-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+
+    .card-contact {
+      background-color: lighten($bg-dark, 2);
+      padding: 2rem;
+      border-radius: $border-radius;
+      width: 250px;
+      height: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--box-shadow2);
+      gap: 1rem;
+
+      svg {
+        $size: 32px;
+        width: $size;
+        height: $size;
+        color: $fg-color-title;
+      }
+    }
   }
 
   .cards-days {
@@ -322,41 +367,6 @@ import Email from "../components/email.astro"
     }
   }
 
-  .contact {
-
-    .cards-contact {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      justify-items: center;
-      /*align-items: center;*/
-      justify-content: center;
-      align-content: center;
-      gap: 2rem;
-      margin-top: 1rem;
-    }
-
-    .card-contact {
-      background-color: lighten($bg-dark, 2);
-      padding: 2rem;
-      border-radius: $border-radius;
-      width: 250px;
-      height: 150px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      box-shadow: var(--box-shadow2);
-      gap: 1rem;
-
-      svg {
-        $size: 32px;
-        width: $size;
-        height: $size;
-        color: $fg-color-title;
-      }
-    }
-  }
-
   .adapted {
     display: flex;
     flex-direction: column;
@@ -378,7 +388,6 @@ import Email from "../components/email.astro"
   }
 
   .map {
-
     img {
       width: 100%;
       max-width: 960px;
@@ -420,6 +429,7 @@ import Email from "../components/email.astro"
 
   .cards-transport {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     gap: 4rem;
     margin-top: 1rem;

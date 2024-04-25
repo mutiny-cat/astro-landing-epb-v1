@@ -45,7 +45,10 @@ $size-icon-transport-vehicle: 32px;
   --color-border: rgb(100, 200, 100);
   --border-card: 1px solid var(--color-border);
   
-  --padding-section: 128px;
+  --padding-section: 96px;
+  @media (width < 768px) { --padding-section: 48px; }
+  @media (width >= 1280px) { --padding-section: 128px; }
+  //--padding-section: 128px;
   
   --box-shadow: 0 2px 6px rgba(var(--color-border), 100%), 0 8px 24px rgba(var(--color-border), 100%), 0 16px 32px rgba(var(--color-border), 100%);
   --box-shadow2: 0 2px 6px rgba(100, 200, 100,.1), 0 8px 24px rgba(100, 200, 100,.1), 0 16px 32px rgba(100, 200, 100,.1);
