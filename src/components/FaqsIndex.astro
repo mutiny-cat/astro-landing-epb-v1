@@ -1,31 +1,34 @@
 ---
 import Accordion from "../components/accordion.astro"
+import Email from "../components/email.astro"
 ---
 
 <section id="faqs" class="color-section">
   <div class="wrapper-section">
     <h2>Preguntes freqüents</h2>
     <ul>
-      <Accordion ask="Com puc contactar amb l'Escola?">
-        <p>Ho pots fer mitjançant el correu electrònic a l'adreça <em>info@puntairesbcn.cat</em>, trucar al telèfon <em>933342802</em> o presencialment al <em>carrer de Sant Erasme, 1 de <i>Ciutat Vella</i> de Barcelona.</em></p>
+      <Accordion ask="Com contacto amb l'Escola?">
+        <p>Ho pots fer per correu electrònic, per telèfon o presencialment a l'escola. Totes les dades les tens <a href="#contacta" title="Contacta">aquí</a>. </p>
       </Accordion>
-      <Accordion ask="Què puc fer a l'Escola?">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda cupiditate expedita non sunt ullam? Adipisci, aspernatur delectus deserunt dolores dolorum earum laudantium molestiae nesciunt quidem repellat, sint totam veritatis! Aliquam animi deserunt eligendi excepturi expedita hic illum iusto, laboriosam magnam neque numquam, obcaecati officia quibusdam quidem quod, sunt tempora temporibus?</p>
+      <Accordion ask="Què faré a l'Escola?">
+        <p></p>
       </Accordion>
-      <Accordion ask="Quins son els preus?">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequatur, error id ipsa nobis obcaecati officiis velit vitae. Aliquam aut commodi distinctio in laborum magni quod sint soluta. Adipisci aliquam, aspernatur distinctio dolores ducimus ea eligendi fugit iste maiores minima nesciunt nobis possimus praesentium quae, quia quibusdam quisquam saepe, voluptates.</p>
+      <Accordion ask="Quins preus teniu?">
+        <p></p>
       </Accordion>
-      <Accordion ask="Puc aprendre dibuix?">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium amet aperiam aut commodi corporis culpa cupiditate debitis doloribus dolorum esse eveniet ex expedita fugit id in incidunt iste itaque laudantium maxime nam necessitatibus, nostrum nulla officia optio, quibusdam quo quod ratione similique temporibus tenetur veniam vero voluptatem. Eius, illum!</p>
+      <Accordion ask="Farem dibuix?">
+        <p></p>
       </Accordion>
-      <Accordion ask="Puc fer classes particulars esporàdiques?">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium amet aperiam aut commodi corporis culpa cupiditate debitis doloribus dolorum esse eveniet ex expedita fugit id in incidunt iste itaque laudantium maxime nam necessitatibus, nostrum nulla officia optio, quibusdam quo quod ratione similique temporibus tenetur veniam vero voluptatem. Eius, illum!</p>
+      <Accordion ask="Feu classes particulars esporàdiques?">
+        <p></p>
       </Accordion>
     </ul>
   </div>
 </section>
 
-<style>
+<style lang="scss">
+  @import "../css/global";
+
   ul {
     width: 100%;
 
@@ -35,6 +38,11 @@ import Accordion from "../components/accordion.astro"
       &:last-child {
         margin-bottom: 0;
       }
+    }
+
+    a {
+      color: $fg-color-title;
+      text-decoration: underline dotted 1px;
     }
   }
 </style>
