@@ -1,162 +1,234 @@
 ---
-import Menu from "./partials/menu.astro"
-import Toggle from "./partials/toggle.astro"
 import Backdrop from "./partials/backdrop.astro"
+
+const menuItems = [
+  {"classItemLi": "menu-li", "classItemA": "header-a", "url": "#escola", "title": "L'escola"},
+  {"classItemLi": "menu-li", "classItemA": "header-a", "url": "#formacio", "title": "Formació"},
+  {"classItemLi": "menu-li", "classItemA": "header-a", "url": "#puntabarcelona", "title": "Punta de Barcelona"},
+  {"classItemLi": "menu-li", "classItemA": "header-a", "url": "#estils", "title": "Estils i mostres"},
+  {"classItemLi": "menu-li", "classItemA": "header-a", "url": "#faqs", "title": "Preguntes freqüents"},
+  {"classItemLi": "menu-li", "classItemA": "header-a header-a-button", "url": "#contacta", "title": "Contacta"}
+]
 ---
 
 <header>
-  <div>
-    <a class="header-logo" href="#top" title="Inici">
+  <div class="wrapper">
+    <a class="header-logo" href="#top" title="Inci de la pàgina">
       <picture>
-        <source srcset="/assets/images/panot-bcn.svg" type="image/svg+xml" media="(max-width: 1365px)" />
-        <img src="/assets/images/logo-escola.svg" alt="Logotip de l'Escola de Puntaires de Barcelona">
+        <source srcset="/assets/images/panot-bcn.svg" type="image/svg+xml" media="(max-width: 1279px)" />
+        <img class="header-img" src="/assets/images/logo-escola.svg" alt="Logotip de l'Escola de Puntaires de Barcelona">
       </picture>
     </a>
-    <Toggle />
-    <nav id="header-landing" class="header-nav">
-      <Menu />
+    <button class="header-button">
+      <svg xmlns="http://www.w3.org/2000/svg" class="header-svg header-open active" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zM8.5 6v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 1 0z"/>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="header-svg header-close" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zM6 7.5h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1 0-1z"/>
+      </svg>
+    </button>
+    <nav class="header-nav" id="header-landing">
+      <ul class="header-ul">
+        {
+          menuItems.map((menuItem) =>
+            <li class={menuItem.classItemLi}><a class={menuItem.classItemA} href={menuItem.url} title={menuItem.title}>{menuItem.title}</a></li>
+          )
+        }
+      </ul>
     </nav>
   </div>
+
+  <button class="header-top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z"/>
+      <path fill-rule="evenodd" d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+    </svg>
+  </button>
+
   <Backdrop />
 </header>
 
 <style lang="scss">
   @import "../../css/global";
 
-  header {
-    background-color : rgba($bg-light, .95);
-    box-shadow       : var(--box-shadow2);
-    margin           : 0;
-    padding          : 0;
-    position         : fixed;
-    width            : 100%;
-    top              : 0;
-    z-index          : 3;
+  $bp: 1280px;
+  $size-icon: 32px;
 
-    div {
-      width: 90%;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      padding: .5rem;
-      justify-content: space-between;
-      align-items: center;
+  .header-top {
+    background-color: $bg-dark;
+    color: $fg-color-title;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 32px;
+    height: 32px;
+    border-radius: $border-radius;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease-in-out;
+    z-index: 1;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    &.active {
+      opacity: .8;
+      pointer-events: auto;
+      transition: opacity .3s ease-in-out;
+
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 
-  a {
-    width: 128px;
-    height: auto;
-    color: $fg-color-secondary;
-    transition: all .3s ease-in-out;
+  header {
+    background-color: rgba($bg-light, .95);
+    box-shadow: var(--box-shadow2);
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    padding: .5rem 0;
+    z-index: 3;
+  }
+
+  .wrapper {
+    max-width: 1600px;
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    @media (width >= $bp) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  .header-logo {
+    width: $size-icon;
+    height: $size-icon;
     padding: 8px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    @media (width < 1366px) {
-      width: 24px;
-      height: 24px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    @media (width >= $bp) {
+      width: 160px;
+      height: auto;
+      transition: all .3s ease-in-out;
 
-      img {
-        width: 20px;
-        height: 20px;
+      &:hover {
+        transform: scale(1.1);
+        transition: all .3s ease-in-out;
       }
     }
+  }
 
-    &:hover {
-      color: lighten($bg-default, 10);
-      transform: scale(1.1);
-      transition: all .3s ease-in-out;
+  .header-img {
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    @media (width >= $bp) {
+      width: 128px;
+      height: auto;
+    }
+  }
+
+  .header-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 38px;
+    height: 38px;
+
+    @media (width >= $bp) {
+      display: none;
+    }
+  }
+
+  .header-svg {
+    width: 30px;
+    height: 30px;
+    color: $fg-color-primary;
+    display: none;
+  }
+
+  .header-open, .header-close {
+    display: none;
+
+    &.active {
+      display: block;
     }
   }
 
   .header-nav {
-    width: auto;
+    width: 100%;
+    padding: 0;
+    flex-grow: 1;
+    height: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity .3s ease-in, height .3s ease-in;
+    pointer-events: none;
 
-    @media (width < 1366px) {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      opacity: 0;
-      height: 0;
+    &.active {
+      height: 100vh;
+      opacity: 1;
       transition: opacity .3s ease-in, height .3s ease-in;
-      pointer-events: none;
-
-      &.isActive {
-        opacity: 1;
-        height: 100vh;
-        transition: opacity .3s ease-in, height .3s ease-in;
-        pointer-events: auto;
-      }
+      pointer-events: auto;
     }
 
+    @media (width >= $bp) {
+      opacity: 1;
+      height: auto;
+      justify-content: flex-end;
+    }
+  }
+
+  .header-ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+    @media (width >= $bp) {
+      flex-direction: row;
+    }
+  }
+
+  .header-li {
+    background-color: $bg-bronze;
+    border: 2px solid $bg-dark;
+    border-radius: $border-radius;
+  }
+
+  .header-a {
+    display: block;
+    margin-left: .5rem;
+    text-align: center;
+    text-decoration: none;
+    pointer-events: auto;
+    color: $fg-color-primary;
+    font-family: var(--font-cite);
+    font-size: 18px;
+    padding: .5rem .8rem;
+    transition: color .3s ease-in;
+
+    &:hover {
+      color: lighten($bg-default, 10);
+      transition: color .3s ease-in;
+    }
   }
 </style>
 
-<script>
-  const button = document.querySelector('.header-toggle')
-  const nav = document.querySelector('.header-nav')
-  const iconOpen = document.querySelector('.open')
-  const iconClose = document.querySelector('.close')
-  const turnOff = document.querySelectorAll('.menu-a')
-  const overflow = document.querySelector('.overflow')
-  const logo = document.querySelector('.header-logo')
-  const menuLi = document.querySelectorAll('.menu-li')
-  const menuItem = document.querySelectorAll('.menu-a')
-  const buttonGo= document.getElementById("gototop")
-
-  button.addEventListener('click', () => {
-    nav.classList.toggle('isActive')
-    iconOpen.classList.toggle('notActive')
-    iconClose.classList.toggle('notActive')
-    overflow.classList.toggle('notOverflow')
-    buttonGo.style.display = "none"
-  })
-
-  turnOff.forEach((cadA, i) => {
-    turnOff[i].addEventListener('click', () => {
-      nav.classList.remove('isActive')
-      iconOpen.classList.toggle('notActive')
-      iconClose.classList.toggle('notActive')
-      overflow.classList.remove('notOverflow')
-    })
-  })
-
-  logo.addEventListener('click', () => {
-    if (nav.classList.contains('isActive') || (iconOpen.classList.contains('notActive'))) {
-      nav.classList.remove('isActive')
-      iconOpen.classList.remove('notActive')
-      iconClose.classList.add('notActive')
-      overflow.classList.remove('notOverflow')
-    }
-  })
-
-  menuLi.forEach((cadLi, i) => {
-    menuLi[i].addEventListener('click', () => {
-      menuLi.forEach((cadaLi, i) => {
-        menuItem[i].classList.remove('isActive')
-      })
-
-      menuItem[i].classList.add('isActive')
-    })
-  })
-
-  buttonGo.addEventListener('click', () => {
-    document.body.scrollTop = 0
-    document.documentElement.scrollTop = 0
-  })
-
-  window.onscroll = function() {scrollFunction()}
-
-  function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      buttonGo.style.display = "flex"
-    } else {
-      buttonGo.style.display = "none"
-    }
-  }
-</script>
-
-
+<script src="../../js/menu.js"></script>
+<script src="../../js/gototop.js"></script>

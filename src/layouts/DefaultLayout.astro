@@ -25,12 +25,12 @@ const { title, description, faviconURL = "/assets/favicons/favicon-96.png", imag
     <title>{pageTitle} | EPB</title>
   </head>
 
-  <body class="overflow">
+  <body>
     <Header />
     <slot />
     <Footer />
-    <GoToTop />
-    <div class="background"></div>
+    <!--<div class="background"></div>-->
+
   </body>
 </html>
 
@@ -38,8 +38,8 @@ const { title, description, faviconURL = "/assets/favicons/favicon-96.png", imag
   @import "../css/global";
 
   .background {
-    /*background: rgb(2,0,36);*/
-    /*background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(204,204,204,1) 35%, rgba(255,255,255,1) 100%);*/
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(204,204,204,1) 35%, rgba(255,255,255,1) 100%);
     position: fixed;
     top: 0;
     left: 0;
@@ -49,5 +49,6 @@ const { title, description, faviconURL = "/assets/favicons/favicon-96.png", imag
     opacity: 1;
   }
 </style>
+
 
 

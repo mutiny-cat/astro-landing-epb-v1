@@ -1,7 +1,8 @@
 1 Repasar el HEADER.
-    1.1 Controlar l'acció del logotip
-    1.2 Controlar l'entrada i sortida del menú mòbil
+    1.1 Controlar l'acció del logotip - Fet -
+    1.2 Controlar l'entrada i sortida del menú mòbil - Fet -
     1.3 Controlar el comportament del botó "gototop"
+
 
 2 Programar l'"scroll spy"
     2.1 Controlar l'acció amb el logotip
@@ -22,4 +23,8 @@
         5.2.2 Nom: VISITOR_INFO1_LIVE       | Valor: 50d9t3PruxY                | Domini: .youtube.com | Path: / | Expira: Sun, 27 Oct 2024 18:02:27 GMT | Tamany: 29 | HttpOnly: true  | Secure: true
         5.2.3 Nom: VISITOR_PRIVACY_METADATA | Valor: CgJFUxIIEgQSAgsMIBY%3D     | Domini: .youtube.com | Path: / | Expira: Sun, 27 Oct 2024 18:02:27 GMT | Tamany: 46 | HttpOnly: true  | Secure: true
         5.2.4 Nom: YSC                      | Valor: wB3ljkHXPRc                | Domini: .youtube.com | Path: / | Expira: Sessió                        | Tamany: 14 | HttpOnly: true  | Secure: true
+
+6 Posar i maquetar l'enllaç a "Viatges i flors" de la Mercè Rodoreda.
+
+7 Canviar les cometes de fons per una flor feta de punta a la secció de la Mercè Rodoreda.
 
