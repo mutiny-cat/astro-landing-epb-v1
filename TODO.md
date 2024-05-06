@@ -1,13 +1,11 @@
 1 Repasar el HEADER.
     1.1 Controlar l'acció del logotip - Fet -
     1.2 Controlar l'entrada i sortida del menú mòbil - Fet -
-    1.3 Controlar el comportament del botó "gototop"
-
+    1.3 Controlar el comportament del botó "goto top" - Fet -
 
 2 Programar l'"scroll spy"
     2.1 Controlar l'acció amb el logotip
-    2.2 Controlar l'acció amb el botó "gototop"
-    2.3 Controlar l'acció amb el CTA del Hero
+    2.2 Controlar l'acció amb el botó "goto top"
 
 3 Fer l'avís legal
 

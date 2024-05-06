@@ -23,8 +23,13 @@
         </svg>
       </div>
       <h2>Ni la seda ni la randa, ni els fils de la lluna boja, ni el miralleig del sol a l’aigua, ni el pètal més delicat de la flor del presseguer, no poden comparar-se a la finor d’aquesta flor.</h2>
-      <cite><a href="https://www.escriptors.cat/autors/rodoredam/obra/viatges-i-flors" title="Enllaça amb la descripció del llibre 'Viatges i flors' de Mercè Rodoreda al web de l'Associació d'escriptors en llengua catalana." target="_blank">Viatges i flors</a>
-      </cite>
+      <a href="https://www.escriptors.cat/autors/rodoredam/obra/viatges-i-flors" title="Enllaça amb la descripció del llibre 'Viatges i flors' de Mercè Rodoreda al web de l'Associació d'escriptors en llengua catalana." target="_blank">
+        <cite>Viatges i flors</cite>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+          <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+        </svg>
+      </a>
     </div>
     <div class="image">
       <img src="/assets/images/merce-rodoreda.webp" alt="Imatge de Mercè Rodoreda">
@@ -94,7 +99,7 @@
 
     h2 {
       font-family: var(--font-italianno);
-      font-size: 24px;
+      font-size: 28px;
       font-weight: 400;
       line-height: 1;
       color: lighten($fg-color-primary, 0);
@@ -105,13 +110,32 @@
       }
     }
 
-    cite {
+    a {
       display: inline-block;
       font-family: var(--font-cite);
-      font-size: 16px;
-      text-align: right;
       width: 100%;
-      color: lighten($fg-color-primary, 0);
+      text-align: center;
+      font-size: 16px;
+      text-decoration: none;
+      color: $fg-color-primary;
+      font-weight: 500;
+      font-style: italic;
+
+      @media (width >= 1024px) { text-align: right; }
+
+      &:hover {
+        text-decoration: underline dotted;
+      }
+
+      svg {
+        $size: 10px;
+        width: $size;
+        height: $size;
+        rotate: 0deg;
+        opacity: 1;
+        margin-left: .2rem;
+        color: currentColor;
+      }
     }
   }
 
